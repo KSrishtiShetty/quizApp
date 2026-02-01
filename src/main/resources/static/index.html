@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="navbar">
+        <h1>🧠 Quiz App</h1>
+    </div>
+
+    <div class="container">
+
+        <!-- Create Quiz -->
+        <div class="card">
+            <h2>Create Quiz</h2>
+
+            <input type="text" id="category" placeholder="Category (Java, Python)">
+            <input type="number" id="numQ" placeholder="Number of Questions">
+            <input type="text" id="title" placeholder="Quiz Title">
+
+            <button onclick="createQuiz()">Create Quiz</button>
+            <p id="createMsg"></p>
+        </div>
+
+        <!-- Load Quiz -->
+        <div class="card">
+            <h2>Take Quiz</h2>
+            <input type="number" id="quizId" placeholder="Quiz ID">
+            <button onclick="loadQuiz()">Start Quiz</button>
+        </div>
+
+        <!-- Quiz Questions -->
+        <div id="quizArea"></div>
+
+    </div>
+
+<script src="quiz.js"></script>
+</body>
+</html>
