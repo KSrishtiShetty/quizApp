@@ -52,7 +52,7 @@ public class QuizService {
 		List<QuestionWrapper> questionsForUser=new ArrayList<>();
 		for(Question q:questionsFromDb)
 		{
-			QuestionWrapper qw=new QuestionWrapper(q.getId(),q.getQuestionTitle(),q.getOption1(),q.getOption2(),q.getOption3(),q.getOption4());
+			QuestionWrapper qw=new QuestionWrapper(q.getId(),q.getOption1(),q.getOption2(),q.getOption3(),q.getOption4(),q.getQuestionTitle());
 			questionsForUser.add(qw);
 		}
 		

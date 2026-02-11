@@ -17,14 +17,20 @@ public interface QuestionDao extends JpaRepository<Question, Integer> {
 
     List<Question> findByCategory(String category);
 
-    @Query(
-        value = "SELECT * FROM question q WHERE q.category = :category ORDER BY RAND()",
-        nativeQuery = true
-    )
+//    @Query(
+//        value = "SELECT * FROM question q WHERE q.category = :category ORDER BY RAND()",
+//        nativeQuery = true
+//    )
+//    List<Question> findRandomQuestionsByCategory(
+//        @Param("category") String category,
+//        Pageable pageable
+//    );
+    @Query("SELECT q FROM Question q WHERE q.category = :category ORDER BY function('RAND')")
     List<Question> findRandomQuestionsByCategory(
         @Param("category") String category,
         Pageable pageable
     );
+
 }
 
 	

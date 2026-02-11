@@ -7,35 +7,43 @@
 </head>
 <body>
 
-    <div class="navbar">
-        <h1>🧠 Quiz App</h1>
-    </div>
+<h1>🧠 Quiz Application</h1>
 
-    <div class="container">
+<!-- ADD QUESTION -->
+<section>
+    <h2>Add Question</h2>
+    <button onclick="addQuestion()">Add Sample Question</button>
+</section>
 
-        <!-- Create Quiz -->
-        <div class="card">
-            <h2>Create Quiz</h2>
+<!-- VIEW QUESTIONS -->
+<section>
+    <h2>View Questions</h2>
+    <button onclick="getAllQuestions()">All Questions</button>
+    <input id="cat" placeholder="Category">
+    <button onclick="getByCategory()">By Category</button>
+    <div id="questionList"></div>
+</section>
 
-            <input type="text" id="category" placeholder="Category (Java, Python)">
-            <input type="number" id="numQ" placeholder="Number of Questions">
-            <input type="text" id="title" placeholder="Quiz Title">
+<!-- CREATE QUIZ -->
+<section>
+    <h2>Create Quiz</h2>
+    <input id="category" placeholder="Category">
+    <input id="numQ" placeholder="No of Questions">
+    <input id="title" placeholder="Quiz Title">
+    <button onclick="createQuiz()">Create Quiz</button>
+    <p id="createMsg"></p>
+</section>
 
-            <button onclick="createQuiz()">Create Quiz</button>
-            <p id="createMsg"></p>
-        </div>
+<!-- TAKE QUIZ -->
+<section>
+    <h2>Take Quiz</h2>
+    <input id="quizId" placeholder="Quiz ID">
+    <button onclick="loadQuiz()">Start Quiz</button>
+</section>
 
-        <!-- Load Quiz -->
-        <div class="card">
-            <h2>Take Quiz</h2>
-            <input type="number" id="quizId" placeholder="Quiz ID">
-            <button onclick="loadQuiz()">Start Quiz</button>
-        </div>
-
-        <!-- Quiz Questions -->
-        <div id="quizArea"></div>
-
-    </div>
+<!-- QUIZ AREA -->
+<div id="quizArea"></div>
+<button onclick="submitQuiz()">Submit Quiz</button>
 
 <script src="quiz.js"></script>
 </body>
